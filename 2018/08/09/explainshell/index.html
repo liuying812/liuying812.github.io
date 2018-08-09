@@ -5,21 +5,21 @@
   
 
   
-  <title>常用命令详解 | JJLin</title>
+  <title>explainshell | JJLin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="ls解释：list directory contents （罗列出ls后目录下所有内容），例如：123$ ls_config.yml  node_modules/  package-lock.json  scaffolds/  themes/db.json      package.json   public/            source/ cat解释：concatenate files">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常用命令详解">
-<meta property="og:url" content="http://yoursite.com/2018/08/09/常用命令详解/index.html">
+<meta property="og:title" content="explainshell">
+<meta property="og:url" content="http://yoursite.com/2018/08/09/explainshell/index.html">
 <meta property="og:site_name" content="JJLin">
 <meta property="og:description" content="ls解释：list directory contents （罗列出ls后目录下所有内容），例如：123$ ls_config.yml  node_modules/  package-lock.json  scaffolds/  themes/db.json      package.json   public/            source/ cat解释：concatenate files">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2018/08/09/常用命令详解/ls-ex.jpg">
-<meta property="og:updated_time" content="2018-08-09T03:32:52.136Z">
+<meta property="og:image" content="http://yoursite.com/2018/08/09/explainshell/ls-ex.jpg">
+<meta property="og:updated_time" content="2018-08-09T04:07:55.944Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="常用命令详解">
+<meta name="twitter:title" content="explainshell">
 <meta name="twitter:description" content="ls解释：list directory contents （罗列出ls后目录下所有内容），例如：123$ ls_config.yml  node_modules/  package-lock.json  scaffolds/  themes/db.json      package.json   public/            source/ cat解释：concatenate files">
-<meta name="twitter:image" content="http://yoursite.com/2018/08/09/常用命令详解/ls-ex.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2018/08/09/explainshell/ls-ex.jpg">
   
     <link rel="alternate" href="/atom.xml" title="JJLin" type="application/atom+xml">
   
@@ -66,10 +66,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-常用命令详解" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-explainshell" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/08/09/常用命令详解/" class="article-date">
-  <time datetime="2018-08-08T16:28:19.000Z" itemprop="datePublished">2018-08-09</time>
+    <a href="/2018/08/09/explainshell/" class="article-date">
+  <time datetime="2018-08-09T04:06:49.000Z" itemprop="datePublished">2018-08-09</time>
 </a>
     
   </div>
@@ -80,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      常用命令详解
+      explainshell
     </h1>
   
 
@@ -92,13 +92,12 @@
 <h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h3><p>解释：concatenate files and print on the standard output（查看某个文件并在标准输出中打印），例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ cat package.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"hexo-site"</span>,</span><br><span class="line">  <span class="string">"version"</span>: <span class="string">"0.0.0"</span>,</span><br><span class="line">  <span class="string">"private"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">"hexo"</span>: &#123;</span><br><span class="line">    <span class="string">"version"</span>: <span class="string">"3.7.1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="string">"hexo"</span>: <span class="string">"^3.2.0"</span>,</span><br><span class="line">    <span class="string">"hexo-deployer-git"</span>: <span class="string">"^0.3.1"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-archive"</span>: <span class="string">"^0.1.4"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-category"</span>: <span class="string">"^0.1.3"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-index"</span>: <span class="string">"^0.2.0"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-tag"</span>: <span class="string">"^0.2.0"</span>,</span><br><span class="line">    <span class="string">"hexo-renderer-ejs"</span>: <span class="string">"^0.3.0"</span>,</span><br><span class="line">    <span class="string">"hexo-renderer-marked"</span>: <span class="string">"^0.3.0"</span>,</span><br><span class="line">    <span class="string">"hexo-renderer-stylus"</span>: <span class="string">"^0.3.1"</span>,</span><br><span class="line">    <span class="string">"hexo-server"</span>: <span class="string">"^0.2.0"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h3><p>解释：move (rename) files, （移动或重命名文件），例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mv a.txt b.txt</span><br></pre></td></tr></table></figure></p>
 <h3 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h3><p>解释：change file timestamps, （新建一个文件或更新一个文件的时间戳）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch aaa.txt</span><br></pre></td></tr></table></figure></p>
-<h3 id="如何使用-explainshell-com-网站"><a href="#如何使用-explainshell-com-网站" class="headerlink" title="如何使用 explainshell.com 网站"></a>如何使用 <a href="https://www.explainshell.com" target="_blank" rel="noopener">explainshell.com</a> 网站</h3><p>这是一个Linux命令解释工具，打开网站输入你想要查看的命令点击enter键就可以得到该命令的解释了，鼠标放到相应的命令会有对应的解释，例如：</p>
-<p><img src="/2018/08/09/常用命令详解/ls-ex.jpg" alt="ls-ex.jpg"></p>
+<h3 id="如何使用-explainshell-com-网站"><a href="#如何使用-explainshell-com-网站" class="headerlink" title="如何使用 explainshell.com 网站"></a>如何使用 <a href="https://www.explainshell.com" target="_blank" rel="noopener">explainshell.com</a> 网站</h3><p>这是一个Linux命令解释工具，打开网站输入你想要查看的命令点击enter键就可以得到该命令的解释了，鼠标放到相应的命令会有对应的解释，例如：<br><img src="/2018/08/09/explainshell/ls-ex.jpg" alt="ls-ex.jpg"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/常用命令详解/" data-id="cjkm1lmrf0003asiq5oqw1h8m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/explainshell/" data-id="cjkm1lmr80001asiq1bd9z2kz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -107,19 +106,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/08/09/explainshell/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          explainshell
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/08/08/8月8日/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/08/09/常用命令详解/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">8月8日</div>
+      <div class="article-nav-title">常用命令详解</div>
     </a>
   
 </nav>

@@ -62,6 +62,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-explainshell" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/09/explainshell/" class="article-date">
+  <time datetime="2018-08-09T04:06:49.000Z" itemprop="datePublished">2018-08-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/09/explainshell/">explainshell</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><p>解释：list directory contents （罗列出ls后目录下所有内容），例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br><span class="line">_config.yml  node_modules/  package-lock.json  scaffolds/  themes/</span><br><span class="line">db.json      package.json   public/            <span class="built_in">source</span>/</span><br></pre></td></tr></table></figure></p>
+<h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h3><p>解释：concatenate files and print on the standard output（查看某个文件并在标准输出中打印），例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ cat package.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"hexo-site"</span>,</span><br><span class="line">  <span class="string">"version"</span>: <span class="string">"0.0.0"</span>,</span><br><span class="line">  <span class="string">"private"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">"hexo"</span>: &#123;</span><br><span class="line">    <span class="string">"version"</span>: <span class="string">"3.7.1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="string">"hexo"</span>: <span class="string">"^3.2.0"</span>,</span><br><span class="line">    <span class="string">"hexo-deployer-git"</span>: <span class="string">"^0.3.1"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-archive"</span>: <span class="string">"^0.1.4"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-category"</span>: <span class="string">"^0.1.3"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-index"</span>: <span class="string">"^0.2.0"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-tag"</span>: <span class="string">"^0.2.0"</span>,</span><br><span class="line">    <span class="string">"hexo-renderer-ejs"</span>: <span class="string">"^0.3.0"</span>,</span><br><span class="line">    <span class="string">"hexo-renderer-marked"</span>: <span class="string">"^0.3.0"</span>,</span><br><span class="line">    <span class="string">"hexo-renderer-stylus"</span>: <span class="string">"^0.3.1"</span>,</span><br><span class="line">    <span class="string">"hexo-server"</span>: <span class="string">"^0.2.0"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h3><p>解释：move (rename) files, （移动或重命名文件），例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mv a.txt b.txt</span><br></pre></td></tr></table></figure></p>
+<h3 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h3><p>解释：change file timestamps, （新建一个文件或更新一个文件的时间戳）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch aaa.txt</span><br></pre></td></tr></table></figure></p>
+<h3 id="如何使用-explainshell-com-网站"><a href="#如何使用-explainshell-com-网站" class="headerlink" title="如何使用 explainshell.com 网站"></a>如何使用 <a href="https://www.explainshell.com" target="_blank" rel="noopener">explainshell.com</a> 网站</h3><p>这是一个Linux命令解释工具，打开网站输入你想要查看的命令点击enter键就可以得到该命令的解释了，鼠标放到相应的命令会有对应的解释，例如：<br><img src="/2018/08/09/explainshell/ls-ex.jpg" alt="ls-ex.jpg"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/09/explainshell/" data-id="cjkm1lmr80001asiq1bd9z2kz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-常用命令详解" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/09/常用命令详解/" class="article-date">
@@ -94,7 +135,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/常用命令详解/" data-id="cjkm100uo0001bsiq0aadmt8w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/常用命令详解/" data-id="cjkm1lmrf0003asiq5oqw1h8m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -131,7 +172,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/08/8月8日/" data-id="cjkm100uh0000bsiq56az2hgy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/08/8月8日/" data-id="cjkm1lmr10000asiqd38tk9st" class="article-share-link">Share</a>
       
       
     </footer>
@@ -176,7 +217,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/08/hello-world/" data-id="cjkm100us0002bsiq2rf76ddg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/08/hello-world/" data-id="cjkm1lmrc0002asiq3bjmbny8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -215,6 +256,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/08/09/explainshell/">explainshell</a>
+          </li>
         
           <li>
             <a href="/2018/08/09/常用命令详解/">常用命令详解</a>
