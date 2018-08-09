@@ -62,6 +62,156 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-learn-http" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/09/learn-http/" class="article-date">
+  <time datetime="2018-08-09T05:29:44.000Z" itemprop="datePublished">2018-08-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/09/learn-http/">learn-http</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#请求</p>
+<h3 id="GET请求"><a href="#GET请求" class="headerlink" title="GET请求"></a>GET请求</h3><p>示例：</p>
+<pre><code>curl -s -v -H &quot;yyyy: xxx&quot; -- &quot;https://www.baidu.com&quot;
+</code></pre><p>请求的内容为：</p>
+<pre><code>GET / HTTP/1.1
+Host: www.baidu.com
+User-Agent: curl/7.54.0
+Accept: */*
+yyyy: xxx
+</code></pre><h3 id="POST请求"><a href="#POST请求" class="headerlink" title="POST请求"></a>POST请求</h3><p>示例：</p>
+<pre><code>curl -X POST -s -v -H &quot;yyyy: xxx&quot; -- &quot;https://www.baidu.com&quot;
+</code></pre><p>请求的内容为：</p>
+<pre><code>POST / HTTP/1.1
+Host: www.baidu.com
+User-Agent: curl/7.54.0
+Accept: */*
+yyyy: xxx
+</code></pre><p>示例2</p>
+<pre><code>curl -X POST -d &quot;1234567890&quot; -s -v -H &quot;yyyy: xxx&quot; -- &quot;https://www.baidu.com&quot;
+</code></pre><p>请求的内容为</p>
+<pre><code>POST / HTTP/1.1
+Host: www.baidu.com
+User-Agent: curl/7.54.0
+Accept: */*
+yyyy: xxx
+Content-Length: 10
+Content-Type: application/x-www-form-urlencoded
+
+1234567890
+</code></pre><h2 id="请求的格式"><a href="#请求的格式" class="headerlink" title="请求的格式"></a>请求的格式</h2><pre><code>1 动词 路径 协议/版本 
+2 Key1: value1
+2 Key2: value2
+2 Key3: value3
+2 Content-Type: application/x-www-form-urlencoded
+2 Host: www.baidu.com
+2 User-Agent: curl/7.54.0  
+3   
+4 要上传的数据
+</code></pre><p>请求最多包含四部分，最少包含三部分。（也就是说第四部分可以为空），<br>第三部分永远都是一个回车（\n）</p>
+<p>动词有 </p>
+<pre><code>GET 
+POST 
+PUT（整体更新）
+PATCH（局部更新） 
+DELETE 
+HEAD 
+OPTIONS 等
+</code></pre><p>这里的路径包括「查询参数」，但不包括「锚点」<br>如果你没有写路径，那么路径默认为 /<br>第 2 部分中的 Content-Type 标注了第 4 部分的格式</p>
+<h2 id="用-Chrome-发请求"><a href="#用-Chrome-发请求" class="headerlink" title="用 Chrome 发请求"></a>用 Chrome 发请求</h2><blockquote>
+<p>打开 Network，<br>地址栏输入网址，<br>在 Network 点击，<br>查看 request，<br><strong>点击「view source」</strong><br>可以看到请求的前三部分了。<br>如果有请求的第四部分，那么在 FormData 或 Payload 里面可以看到</p>
+</blockquote>
+<p><img src="learn-http/request_headers.png" alt="request_headers.png"></p>
+<p>#响应<br>     请求：curl -s -v -H “yyyy: xxx” – “<a href="https://www.baidu.com&quot;" target="_blank" rel="noopener">https://www.baidu.com&quot;</a></p>
+<pre><code>响应：     
+    HTTP/1.1 200 OK
+    Accept-Ranges: bytes
+    Cache-Control: private, no-cache, no-store, proxy-revalidate, no-transform
+    Connection: Keep-Alive
+    Content-Length: 2443
+    Content-Type: text/html
+    Date: Thu, 09 Aug 2018 05:56:14 GMT
+    Etag: &quot;588603e6-98b&quot;
+    Last-Modified: Mon, 23 Jan 2017 13:23:50 GMT
+    Pragma: no-cache
+    Server: bfe/1.0.8.18
+    Set-Cookie: BDORZ=27315; max-age=86400; domain=.baidu.com; path=/     
+
+    &lt;!DOCTYPE html&gt;&lt;!--STATUS OK--&gt;&lt;html&gt; ......         
+</code></pre><p>1、GET 请求和 POST 请求对应的响应可以一样，也可以不一样<br>2、响应的第四部分可以很长很长很长 </p>
+<h2 id="响应的格式"><a href="#响应的格式" class="headerlink" title="响应的格式"></a>响应的格式</h2><pre><code>1 协议/版本号 状态码 状态解释
+2 Key1: value1
+2 Key2: value2
+2 Content-Length: 17931
+2 Content-Type: text/html
+3
+4 要下载的内容
+</code></pre><p>状态码要背，是服务器对浏览器说的话</p>
+<pre><code>2xx 表示请求失败
+3xx 表示资源被转移
+4xx 表示请求失败
+5xx 表示服务器出错
+</code></pre><p>第 2 部分中的 Content-Type 标注了第 4 部分的格式<br>第 2 部分中的 Content-Type 遵循 MIME 规范</p>
+<p>##用 Chrome 查看响应</p>
+<blockquote>
+<p>打开 Network<br>输入网址<br>选中第一个响应<br>查看 Response Headers，<strong>点击「view source」</strong>，<br>会看到响应的前两部分<br>查看 Response 或者 Preview，会看到响应的第 4 部分</p>
+</blockquote>
+<p><img src="learn-http/response_headers.png" alt="response_headers.png"></p>
+<p>##如何使用 curl 命令</p>
+<blockquote>
+<p>在Linux中curl是一个利用URL规则在命令行下工作的文件传输工具，可以说是一款很强大的http命令行工具。它支持文件的上传和下载，是综合传输工具，但按传统，习惯称url为下载工具。</p>
+</blockquote>
+<pre><code>语法： curl [option] [url]
+</code></pre><p>常见参数：</p>
+<pre><code>-A/--user-agent &lt;string&gt;              设置用户代理发送给服务器
+-b/--cookie &lt;name=string/file&gt;    cookie字符串或文件读取位置
+-c/--cookie-jar &lt;file&gt;                    操作结束后把cookie写入到这个文件中
+-C/--continue-at &lt;offset&gt;            断点续转
+-D/--dump-header &lt;file&gt;              把header信息写入到该文件中
+-e/--referer                                  来源网址
+-f/--fail                                          连接失败时不显示http错误
+-o/--output                                  把输出写到该文件中
+-O/--remote-name                      把输出写到该文件中，保留远程文件的文件名
+-r/--range &lt;range&gt;                      检索来自HTTP/1.1或FTP服务器字节范围
+-s/--silent                                    静音模式。不输出任何东西
+-T/--upload-file &lt;file&gt;                  上传文件
+-u/--user &lt;user[:password]&gt;      设置服务器的用户和密码
+-w/--write-out [format]                什么输出完成后
+-x/--proxy &lt;host[:port]&gt;              在给定的端口上使用HTTP代理
+-#/--progress-bar                        进度条显示当前的传送状态
+</code></pre><p>例子：<br>1、基本用法</p>
+<pre><code>curl http://www.baidu.com
+</code></pre><p>执行后，[<a href="http://www.baidu.com]" target="_blank" rel="noopener">www.baidu.com]</a> (<a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a>) 的 html 就会显示在屏幕上了</p>
+<p>2、保存访问的网页<br>  使用linux的重定向功能保存</p>
+<pre><code>curl http://www.baidu.com &gt;&gt; baidu.html
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/09/learn-http/" data-id="cjkm6hug10005bwiqhywg0hw9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-learn-git" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/09/learn-git/" class="article-date">
@@ -98,7 +248,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/learn-git/" data-id="cjkm3wqyc0002ssiqmutfpinx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/learn-git/" data-id="cjkm6hufy0003bwiqm7dgn7vr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -139,7 +289,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/explainshell/" data-id="cjkm3wqyg0004ssiql62l8d3t" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/explainshell/" data-id="cjkm6hufv0002bwiqieccu20z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -181,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/常用命令详解/" data-id="cjkm3wqy80001ssiqtiwsljb8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/常用命令详解/" data-id="cjkm6hug00004bwiqvt0gbmmw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -218,7 +368,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/08/8月8日/" data-id="cjkm3wqye0003ssiqp5cw7coy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/08/8月8日/" data-id="cjkm6hufk0000bwiqiu3adis3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -263,7 +413,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/08/hello-world/" data-id="cjkm3wqy00000ssiq4001r1yf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/08/hello-world/" data-id="cjkm6hufs0001bwiqxcxukv0e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -304,6 +454,10 @@
       <ul>
         
           <li>
+            <a href="/2018/08/09/learn-http/">learn-http</a>
+          </li>
+        
+          <li>
             <a href="/2018/08/09/learn-git/">learn-git</a>
           </li>
         
@@ -317,10 +471,6 @@
         
           <li>
             <a href="/2018/08/08/8月8日/">8月8日</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/08/hello-world/">Hello World</a>
           </li>
         
       </ul>
