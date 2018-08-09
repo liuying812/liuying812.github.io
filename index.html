@@ -62,6 +62,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-learn-git" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/09/learn-git/" class="article-date">
+  <time datetime="2018-08-09T04:39:15.000Z" itemprop="datePublished">2018-08-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/09/learn-git/">learn-git</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Git-入门"><a href="#Git-入门" class="headerlink" title="Git 入门"></a>Git 入门</h2><p>创建一个版本库，首先，选择一个合适的地方，创建一个空目录并进入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir learn-git</span><br><span class="line">$ <span class="built_in">cd</span> learn-git</span><br></pre></td></tr></table></figure></p>
+<h3 id="第一步，通过-git-init-命令把这个目录变成Git可以管理的仓库"><a href="#第一步，通过-git-init-命令把这个目录变成Git可以管理的仓库" class="headerlink" title="第一步，通过 git init 命令把这个目录变成Git可以管理的仓库"></a>第一步，通过 git init 命令把这个目录变成Git可以管理的仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/08/09/learn-git/git_init.png" alt="git_init.png"></p>
+<p>此时可以看到当前目录多了一个.git 目录，这个目录是Git来跟踪管理版本库的，没事千万不要手动修改这个目录里面的文件，不然改乱了，就把Git仓库给破坏了。</p>
+<h3 id="第二步，通过-git-add-命令把文件添加到仓库"><a href="#第二步，通过-git-add-命令把文件添加到仓库" class="headerlink" title="第二步，通过 git add 命令把文件添加到仓库"></a>第二步，通过 git add 命令把文件添加到仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/08/09/learn-git/git_add.png" alt="git_add.png"></p>
+<p>执行上面的命令，没有任何显示，这就对了，说明添加成功。</p>
+<h3 id="第三步，通过-git-commit-命令告诉Git，把文件提交到仓库"><a href="#第三步，通过-git-commit-命令告诉Git，把文件提交到仓库" class="headerlink" title="第三步，通过 git commit 命令告诉Git，把文件提交到仓库"></a>第三步，通过 git commit 命令告诉Git，把文件提交到仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m <span class="string">'XXXXX'</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2018/08/09/learn-git/git_commit.png" alt="git_add.png"></p>
+<p>-m 后面输入的是本次提交的说明，方便记录查找。git commit 命令执行成功后会告诉你，1 file changed：1个文件被改动（新添加的readme.txt文件）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/09/learn-git/" data-id="cjkm3wqyc0002ssiqmutfpinx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-explainshell" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/09/explainshell/" class="article-date">
@@ -93,7 +139,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/explainshell/" data-id="cjkm25qin0002c4iqtneb1h65" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/explainshell/" data-id="cjkm3wqyg0004ssiql62l8d3t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -135,7 +181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/常用命令详解/" data-id="cjkm25qiq0003c4iqd59h5g3b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/常用命令详解/" data-id="cjkm3wqy80001ssiqtiwsljb8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -172,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/08/8月8日/" data-id="cjkm25qib0000c4iq8yg8rlc1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/08/8月8日/" data-id="cjkm3wqye0003ssiqp5cw7coy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -217,7 +263,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/08/hello-world/" data-id="cjkm25qij0001c4iqcg17t9xs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/08/hello-world/" data-id="cjkm3wqy00000ssiq4001r1yf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -256,6 +302,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/08/09/learn-git/">learn-git</a>
+          </li>
         
           <li>
             <a href="/2018/08/09/explainshell/">explainshell</a>

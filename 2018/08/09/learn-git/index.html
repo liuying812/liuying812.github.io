@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>learn-git | JJLin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Git 入门创建一个版本库，首先，选择一个合适的地方，创建一个空目录并进入：12$ mkdir learn-git$ cd learn-git 第一步，通过 git init 命令把这个目录变成Git可以管理的仓库1$ git init  此时可以看到当前目录多了一个.git 目录，这个目录是Git来跟踪管理版本库的，没事千万不要手动修改这个目录里面的文件，不然改乱了，就把Git仓库给破坏了。 第">
+<meta property="og:type" content="article">
+<meta property="og:title" content="learn-git">
+<meta property="og:url" content="http://yoursite.com/2018/08/09/learn-git/index.html">
+<meta property="og:site_name" content="JJLin">
+<meta property="og:description" content="Git 入门创建一个版本库，首先，选择一个合适的地方，创建一个空目录并进入：12$ mkdir learn-git$ cd learn-git 第一步，通过 git init 命令把这个目录变成Git可以管理的仓库1$ git init  此时可以看到当前目录多了一个.git 目录，这个目录是Git来跟踪管理版本库的，没事千万不要手动修改这个目录里面的文件，不然改乱了，就把Git仓库给破坏了。 第">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2018/08/09/learn-git/git_init.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/09/learn-git/git_add.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/09/learn-git/git_commit.png">
+<meta property="og:updated_time" content="2018-08-09T05:12:36.852Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="learn-git">
+<meta name="twitter:description" content="Git 入门创建一个版本库，首先，选择一个合适的地方，创建一个空目录并进入：12$ mkdir learn-git$ cd learn-git 第一步，通过 git init 命令把这个目录变成Git可以管理的仓库1$ git init  此时可以看到当前目录多了一个.git 目录，这个目录是Git来跟踪管理版本库的，没事千万不要手动修改这个目录里面的文件，不然改乱了，就把Git仓库给破坏了。 第">
+<meta name="twitter:image" content="http://yoursite.com/2018/08/09/learn-git/git_init.png">
+  
+    <link rel="alternate" href="/atom.xml" title="JJLin" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">JJLin</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-learn-git" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/09/learn-git/" class="article-date">
+  <time datetime="2018-08-09T04:39:15.000Z" itemprop="datePublished">2018-08-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      learn-git
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Git-入门"><a href="#Git-入门" class="headerlink" title="Git 入门"></a>Git 入门</h2><p>创建一个版本库，首先，选择一个合适的地方，创建一个空目录并进入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir learn-git</span><br><span class="line">$ <span class="built_in">cd</span> learn-git</span><br></pre></td></tr></table></figure></p>
+<h3 id="第一步，通过-git-init-命令把这个目录变成Git可以管理的仓库"><a href="#第一步，通过-git-init-命令把这个目录变成Git可以管理的仓库" class="headerlink" title="第一步，通过 git init 命令把这个目录变成Git可以管理的仓库"></a>第一步，通过 git init 命令把这个目录变成Git可以管理的仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/08/09/learn-git/git_init.png" alt="git_init.png"></p>
+<p>此时可以看到当前目录多了一个.git 目录，这个目录是Git来跟踪管理版本库的，没事千万不要手动修改这个目录里面的文件，不然改乱了，就把Git仓库给破坏了。</p>
+<h3 id="第二步，通过-git-add-命令把文件添加到仓库"><a href="#第二步，通过-git-add-命令把文件添加到仓库" class="headerlink" title="第二步，通过 git add 命令把文件添加到仓库"></a>第二步，通过 git add 命令把文件添加到仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/08/09/learn-git/git_add.png" alt="git_add.png"></p>
+<p>执行上面的命令，没有任何显示，这就对了，说明添加成功。</p>
+<h3 id="第三步，通过-git-commit-命令告诉Git，把文件提交到仓库"><a href="#第三步，通过-git-commit-命令告诉Git，把文件提交到仓库" class="headerlink" title="第三步，通过 git commit 命令告诉Git，把文件提交到仓库"></a>第三步，通过 git commit 命令告诉Git，把文件提交到仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m <span class="string">'XXXXX'</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2018/08/09/learn-git/git_commit.png" alt="git_add.png"></p>
+<p>-m 后面输入的是本次提交的说明，方便记录查找。git commit 命令执行成功后会告诉你，1 file changed：1个文件被改动（新添加的readme.txt文件）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/09/learn-git/" data-id="cjkm3wqyc0002ssiqmutfpinx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/08/09/explainshell/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">explainshell</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/08/09/learn-git/">learn-git</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/09/explainshell/">explainshell</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/09/常用命令详解/">常用命令详解</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/08/8月8日/">8月8日</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/08/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Ying L<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
