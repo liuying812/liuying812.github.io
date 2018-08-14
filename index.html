@@ -62,6 +62,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CSSLayout" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/14/CSSLayout/" class="article-date">
+  <time datetime="2018-08-14T02:18:40.000Z" itemprop="datePublished">2018-08-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/14/CSSLayout/">CSSLayout</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="左右布局"><a href="#左右布局" class="headerlink" title="左右布局"></a>左右布局</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">float做横向布局：</span><br><span class="line">1.给所有子元素加float:left; </span><br><span class="line">2.给父元素加clearfix类;</span><br><span class="line"> .clearfix::after &#123;content:&apos;&apos;;display:block; clear:both&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="左中右布局"><a href="#左中右布局" class="headerlink" title="左中右布局"></a>左中右布局</h3><p>左中右布局与左右布局同理，子元素float:left,父元素加clearfix<br><img src="/2018/08/14/CSSLayout/C:/Users/ying/Desktop/lyBlog/source/_posts/CSSLayout/lmr.jpg" alt="lmr.jpg"></p>
+<h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><p><strong>行级元素</strong><br>.parent{text-align: center;}<br>.child{display: inline} </p>
+<p><strong>块级元素</strong><br>1、child宽度确定<br> .child{margin-left:auto; margin-right:auto;} </p>
+<p>2、child宽度不确定<br> .child{margin-left:20px; margin-right:20px;}       </p>
+<h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><p>原则：尽量不要给父元素的高度固定死，让里面的元素padding撑起相应的高度    </p>
+<p>child高度确定 / child 高度不确定<br>.parent {padding-top: 20px; padding-bottom:20px;}</p>
+<h4 id="父元素高度确定跟浏览器高度一致，让子元素垂直居中"><a href="#父元素高度确定跟浏览器高度一致，让子元素垂直居中" class="headerlink" title="父元素高度确定跟浏览器高度一致，让子元素垂直居中"></a>父元素高度确定跟浏览器高度一致，让子元素垂直居中</h4><p><a href="https://github.com/liuying812/CSS_Sum/blob/master/bodyvh.html" target="_blank" rel="noopener">https://github.com/liuying812/CSS_Sum/blob/master/bodyvh.html</a></p>
+<h4 id="display相关"><a href="#display相关" class="headerlink" title="display相关"></a>display相关</h4><p>display:block 会自动扩展；<br>display:inline-block 会自动收缩；(而且下面会出现空隙，解决：加vertical-align:top)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/14/CSSLayout/" data-id="cjkt613kn0001w8iq7p96wcli" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-CSS常用知识点总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/13/CSS常用知识点总结/" class="article-date">
@@ -97,7 +142,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/13/CSS常用知识点总结/" data-id="cjks58tzn00000kiqundpu7zo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/13/CSS常用知识点总结/" data-id="cjkt613li0007w8iqjhtkfuzu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -148,7 +193,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/10/HtmlTags/" data-id="cjks58u1000030kiqq8pzzl32" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/10/HtmlTags/" data-id="cjkt613lk0008w8iq9u4lv126" class="article-share-link">Share</a>
       
       
     </footer>
@@ -292,7 +337,7 @@ OPTIONS 等
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/learn-http/" data-id="cjks58u1200040kiqcfomsngr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/learn-http/" data-id="cjkt613lc0004w8iqzoo40v6v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -338,7 +383,7 @@ OPTIONS 等
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/learn-git/" data-id="cjks58u1k00060kiqteoqwvue" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/learn-git/" data-id="cjkt613lg0006w8iqa6q9hsqq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -379,7 +424,7 @@ OPTIONS 等
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/explainshell/" data-id="cjks58u1i00050kiqiqzhgvjy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/explainshell/" data-id="cjkt613lb0003w8iqhae3dqqy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -421,7 +466,7 @@ OPTIONS 等
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/常用命令详解/" data-id="cjks58u1t00070kiqh507ykp9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/常用命令详解/" data-id="cjkt613le0005w8iq499yyawu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -458,7 +503,7 @@ OPTIONS 等
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/08/8月8日/" data-id="cjks58u0300010kiqvwomknx4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/08/8月8日/" data-id="cjkt613iy0000w8iqjimd0hk9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -503,7 +548,7 @@ OPTIONS 等
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/08/hello-world/" data-id="cjks58u0x00020kiql4fizyx5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/08/hello-world/" data-id="cjkt613l90002w8iqi1y1s7i8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -544,6 +589,10 @@ OPTIONS 等
       <ul>
         
           <li>
+            <a href="/2018/08/14/CSSLayout/">CSSLayout</a>
+          </li>
+        
+          <li>
             <a href="/2018/08/13/CSS常用知识点总结/">CSS常用知识点总结</a>
           </li>
         
@@ -557,10 +606,6 @@ OPTIONS 等
         
           <li>
             <a href="/2018/08/09/learn-git/">learn-git</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/09/explainshell/">explainshell</a>
           </li>
         
       </ul>

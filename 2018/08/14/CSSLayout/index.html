@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>CSSLayout | JJLin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="左右布局1234float做横向布局：1.给所有子元素加float:left; 2.给父元素加clearfix类; .clearfix::after &amp;#123;content:&amp;apos;&amp;apos;;display:block; clear:both&amp;#125; 左中右布局左中右布局与左右布局同理，子元素float:left,父元素加clearfix 水平居中行级元素.parent{text-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSSLayout">
+<meta property="og:url" content="http://yoursite.com/2018/08/14/CSSLayout/index.html">
+<meta property="og:site_name" content="JJLin">
+<meta property="og:description" content="左右布局1234float做横向布局：1.给所有子元素加float:left; 2.给父元素加clearfix类; .clearfix::after &amp;#123;content:&amp;apos;&amp;apos;;display:block; clear:both&amp;#125; 左中右布局左中右布局与左右布局同理，子元素float:left,父元素加clearfix 水平居中行级元素.parent{text-">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2018/08/14/CSSLayout/C:/Users/ying/Desktop/lyBlog/source/_posts/CSSLayout/lmr.jpg">
+<meta property="og:updated_time" content="2018-08-14T03:46:18.787Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSSLayout">
+<meta name="twitter:description" content="左右布局1234float做横向布局：1.给所有子元素加float:left; 2.给父元素加clearfix类; .clearfix::after &amp;#123;content:&amp;apos;&amp;apos;;display:block; clear:both&amp;#125; 左中右布局左中右布局与左右布局同理，子元素float:left,父元素加clearfix 水平居中行级元素.parent{text-">
+<meta name="twitter:image" content="http://yoursite.com/2018/08/14/CSSLayout/C:/Users/ying/Desktop/lyBlog/source/_posts/CSSLayout/lmr.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="JJLin" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">JJLin</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CSSLayout" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/14/CSSLayout/" class="article-date">
+  <time datetime="2018-08-14T02:18:40.000Z" itemprop="datePublished">2018-08-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSSLayout
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="左右布局"><a href="#左右布局" class="headerlink" title="左右布局"></a>左右布局</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">float做横向布局：</span><br><span class="line">1.给所有子元素加float:left; </span><br><span class="line">2.给父元素加clearfix类;</span><br><span class="line"> .clearfix::after &#123;content:&apos;&apos;;display:block; clear:both&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="左中右布局"><a href="#左中右布局" class="headerlink" title="左中右布局"></a>左中右布局</h3><p>左中右布局与左右布局同理，子元素float:left,父元素加clearfix<br><img src="/2018/08/14/CSSLayout/C:/Users/ying/Desktop/lyBlog/source/_posts/CSSLayout/lmr.jpg" alt="lmr.jpg"></p>
+<h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><p><strong>行级元素</strong><br>.parent{text-align: center;}<br>.child{display: inline} </p>
+<p><strong>块级元素</strong><br>1、child宽度确定<br> .child{margin-left:auto; margin-right:auto;} </p>
+<p>2、child宽度不确定<br> .child{margin-left:20px; margin-right:20px;}       </p>
+<h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><p>原则：尽量不要给父元素的高度固定死，让里面的元素padding撑起相应的高度    </p>
+<p>child高度确定 / child 高度不确定<br>.parent {padding-top: 20px; padding-bottom:20px;}</p>
+<h4 id="父元素高度确定跟浏览器高度一致，让子元素垂直居中"><a href="#父元素高度确定跟浏览器高度一致，让子元素垂直居中" class="headerlink" title="父元素高度确定跟浏览器高度一致，让子元素垂直居中"></a>父元素高度确定跟浏览器高度一致，让子元素垂直居中</h4><p><a href="https://github.com/liuying812/CSS_Sum/blob/master/bodyvh.html" target="_blank" rel="noopener">https://github.com/liuying812/CSS_Sum/blob/master/bodyvh.html</a></p>
+<h4 id="display相关"><a href="#display相关" class="headerlink" title="display相关"></a>display相关</h4><p>display:block 会自动扩展；<br>display:inline-block 会自动收缩；(而且下面会出现空隙，解决：加vertical-align:top)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/14/CSSLayout/" data-id="cjkt613kn0001w8iq7p96wcli" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/08/13/CSS常用知识点总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CSS常用知识点总结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/08/14/CSSLayout/">CSSLayout</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/13/CSS常用知识点总结/">CSS常用知识点总结</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/10/HtmlTags/">HtmlTags</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/09/learn-http/">learn-http</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/09/learn-git/">learn-git</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Ying L<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
