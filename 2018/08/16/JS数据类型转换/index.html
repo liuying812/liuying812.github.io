@@ -14,13 +14,13 @@
 <meta property="og:site_name" content="JJLin">
 <meta property="og:description" content="转化为 string 类型① 和空字符’’串相加 ， 1 + ‘’ = “1”   ， true + ‘’ = “true”② 使用 .tostring() 方法 ， (11).toString()  // “11”③ 使用 String() 方法 ， window.String(‘111’) // “111” ，String(true)//“true”     转化为 boolean 类型① 使">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2018/08/16/JS数据类型转换/neicun1.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/16/JS数据类型转换/nc1.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/08/16/JS数据类型转换/neicun2.jpg">
-<meta property="og:updated_time" content="2018-08-16T06:20:25.379Z">
+<meta property="og:updated_time" content="2018-08-16T06:26:32.145Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS数据类型转换">
 <meta name="twitter:description" content="转化为 string 类型① 和空字符’’串相加 ， 1 + ‘’ = “1”   ， true + ‘’ = “true”② 使用 .tostring() 方法 ， (11).toString()  // “11”③ 使用 String() 方法 ， window.String(‘111’) // “111” ，String(true)//“true”     转化为 boolean 类型① 使">
-<meta name="twitter:image" content="http://yoursite.com/2018/08/16/JS数据类型转换/neicun1.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2018/08/16/JS数据类型转换/nc1.jpg">
   
     <link rel="alternate" href="/atom.xml" title="JJLin" type="application/atom+xml">
   
@@ -93,14 +93,14 @@
 <h4 id="转化为-boolean-类型"><a href="#转化为-boolean-类型" class="headerlink" title="转化为 boolean 类型"></a>转化为 boolean 类型</h4><p>① 使用 Boolean() 方法 ， Boolean(1) // true ， Boolean(null) //false<br>② 取反两次得到本身对应布尔值 ， !!true // true， !!{} // true ,对象布尔值全都是true<br><strong>五个falsy值</strong><br>number：0， NaN<br>string：’’（空字符串）<br>null：  null<br>undefined： undefined</p>
 <h4 id="转化为-number-类型"><a href="#转化为-number-类型" class="headerlink" title="转化为 number 类型"></a>转化为 number 类型</h4><p>① Number(‘111’) // 111<br>② parseInt(‘1’,10)  // 1,10代表十进制<br>③ parseFloat(‘1.23’)  // 1.23<br>④ 和零相减：’11’ - 0   // 11<br>⑤ + 取原有值: + ‘12’  //12<br>区分点：<br>parseInt(‘011’) // 11<br>parseInt(‘011’ , 8) // 9<br>parseInt(‘s’)  // NaN<br>parseInt(‘1s’)  // 1</p>
 <h4 id="内存图"><a href="#内存图" class="headerlink" title="内存图"></a>内存图</h4><p>内存一旦断电东西全空了，有点速度快；外存断电东西还在（如硬盘）<br>研究JS所占内存的分配与使用，var a = 1; a存在代码区，1存在数据区，数据区分为栈内存（stack）和 堆内存（heap），JS中数字以64位浮点数存储，字符以每个16位存储 </p>
-<p><img src="/2018/08/16/JS数据类型转换/neicun1.jpg" alt="aa.jpg"> </p>
+<p><img src="/2018/08/16/JS数据类型转换/nc1.jpg" alt="nc1.jpg"> </p>
 <p>常见内存分析类型如图</p>
-<p><img src="/2018/08/16/JS数据类型转换/neicun2.jpg" alt="dd.jpg"></p>
+<p><img src="/2018/08/16/JS数据类型转换/neicun2.jpg" alt="neicun2.jpg"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/16/JS数据类型转换/" data-id="cjkw6gszd00047oiqzeaxqbc3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/16/JS数据类型转换/" data-id="cjkw6mk2c0004swiqtpyypsiw" class="article-share-link">Share</a>
       
       
     </footer>
