@@ -62,6 +62,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JS数据类型转换" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/16/JS数据类型转换/" class="article-date">
+  <time datetime="2018-08-16T05:31:38.000Z" itemprop="datePublished">2018-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/16/JS数据类型转换/">JS数据类型转换</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="转化为-string-类型"><a href="#转化为-string-类型" class="headerlink" title="转化为 string 类型"></a>转化为 string 类型</h4><p>① 和空字符’’串相加 ， 1 + ‘’ = “1”   ， true + ‘’ = “true”<br>② 使用 .tostring() 方法 ， (11).toString()  // “11”<br>③ 使用 String() 方法 ， window.String(‘111’) // “111” ，String(true)//“true”    </p>
+<h4 id="转化为-boolean-类型"><a href="#转化为-boolean-类型" class="headerlink" title="转化为 boolean 类型"></a>转化为 boolean 类型</h4><p>① 使用 Boolean() 方法 ， Boolean(1) // true ， Boolean(null) //false<br>② 取反两次得到本身对应布尔值 ， !!true // true， !!{} // true ,对象布尔值全都是true<br><strong>五个falsy值</strong><br>number：0， NaN<br>string：’’（空字符串）<br>null：  null<br>undefined： undefined</p>
+<h4 id="转化为-number-类型"><a href="#转化为-number-类型" class="headerlink" title="转化为 number 类型"></a>转化为 number 类型</h4><p>① Number(‘111’) // 111<br>② parseInt(‘1’,10)  // 1,10代表十进制<br>③ parseFloat(‘1.23’)  // 1.23<br>④ 和零相减：’11’ - 0   // 11<br>⑤ + 取原有值: + ‘12’  //12<br>区分点：<br>parseInt(‘011’) // 11<br>parseInt(‘011’ , 8) // 9<br>parseInt(‘s’)  // NaN<br>parseInt(‘1s’)  // 1</p>
+<h4 id="内存图"><a href="#内存图" class="headerlink" title="内存图"></a>内存图</h4><p>内存一旦断电东西全空了，有点速度快；外存断电东西还在（如硬盘）<br>研究JS所占内存的分配与使用，var a = 1; a存在代码区，1存在数据区，数据区分为栈内存（stack）和 堆内存（heap），JS中数字以64位浮点数存储，字符以每个16位存储<br><img src="/2018/08/16/JS数据类型转换/aa.jpg" alt="aa.jpg"><br><img src="/2018/08/16/JS数据类型转换/dd.jpg" alt="dd.jpg"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/16/JS数据类型转换/" data-id="cjkw605u10002voiqns17x63e" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-JS数据类型" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/15/JS数据类型/" class="article-date">
@@ -103,7 +143,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/15/JS数据类型/" data-id="cjkvbtdpo00033siqnpeogc4r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/15/JS数据类型/" data-id="cjkw605uz0008voiqyrsnke02" class="article-share-link">Share</a>
       
       
     </footer>
@@ -148,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/14/CSSLayout/" data-id="cjkvbtdpj00013siqh07hzkks" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/14/CSSLayout/" data-id="cjkw605th0001voiqg4umieho" class="article-share-link">Share</a>
       
       
     </footer>
@@ -193,7 +233,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/13/CSS常用知识点总结/" data-id="cjkvbtdpq00043siqxw6j3gxc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/13/CSS常用知识点总结/" data-id="cjkw605u60005voiq11ser1m2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -244,7 +284,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/10/HtmlTags/" data-id="cjkvbtdpm00023siq48m7q9x9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/10/HtmlTags/" data-id="cjkw605u80006voiqlmtwoknl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -388,7 +428,7 @@ OPTIONS 等
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/learn-http/" data-id="cjkvbtdq400063siq8jtreces" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/learn-http/" data-id="cjkw605v2000avoiqxfz0gddv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -434,7 +474,7 @@ OPTIONS 等
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/learn-git/" data-id="cjkvbtdq300053siqwtc60t65" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/learn-git/" data-id="cjkw605u30003voiq6ikwqj75" class="article-share-link">Share</a>
       
       
     </footer>
@@ -475,7 +515,7 @@ OPTIONS 等
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/explainshell/" data-id="cjkvbtdqa00083siqntmr0546" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/explainshell/" data-id="cjkw605ua0007voiq42v95eyk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -517,7 +557,7 @@ OPTIONS 等
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/常用命令详解/" data-id="cjkvbtdq600073siqabnbm93b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/常用命令详解/" data-id="cjkw605v10009voiqrytbolk3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -554,52 +594,7 @@ OPTIONS 等
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/08/8月8日/" data-id="cjkvbtdos00003siqvehder95" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/08/hello-world/" class="article-date">
-  <time datetime="2018-08-08T15:55:35.295Z" itemprop="datePublished">2018-08-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/08/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/08/hello-world/" data-id="cjkvbtdqr00093siq6dxz703v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/08/8月8日/" data-id="cjkw605t80000voiq3qwfjmgr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -610,6 +605,11 @@ OPTIONS 等
 
   
 
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
 
 </section>
         
@@ -640,6 +640,10 @@ OPTIONS 等
       <ul>
         
           <li>
+            <a href="/2018/08/16/JS数据类型转换/">JS数据类型转换</a>
+          </li>
+        
+          <li>
             <a href="/2018/08/15/JS数据类型/">JS数据类型</a>
           </li>
         
@@ -653,10 +657,6 @@ OPTIONS 等
         
           <li>
             <a href="/2018/08/10/HtmlTags/">HtmlTags</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/09/learn-http/">learn-http</a>
           </li>
         
       </ul>
