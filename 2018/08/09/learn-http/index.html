@@ -14,13 +14,13 @@
 <meta property="og:site_name" content="JJLin">
 <meta property="og:description" content="请求GET请求示例： curl -s -v -H &amp;quot;yyyy: xxx&amp;quot; -- &amp;quot;https://www.baidu.com&amp;quot; 请求的内容为： GET / HTTP/1.1 Host: www.baidu.com User-Agent: curl/7.54.0 Accept: */* yyyy: xxx POST请求示例： curl -X POST -s -">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2018/08/09/learn-http/learn-http/request_headers.png">
-<meta property="og:image" content="http://yoursite.com/2018/08/09/learn-http/learn-http/response_headers.png">
-<meta property="og:updated_time" content="2018-08-09T07:12:10.511Z">
+<meta property="og:image" content="http://yoursite.com/2018/08/09/learn-http/learn-http/request_header.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/09/learn-http/learn-http/response_header.png">
+<meta property="og:updated_time" content="2018-08-16T06:22:14.132Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="learn-http">
 <meta name="twitter:description" content="请求GET请求示例： curl -s -v -H &amp;quot;yyyy: xxx&amp;quot; -- &amp;quot;https://www.baidu.com&amp;quot; 请求的内容为： GET / HTTP/1.1 Host: www.baidu.com User-Agent: curl/7.54.0 Accept: */* yyyy: xxx POST请求示例： curl -X POST -s -">
-<meta name="twitter:image" content="http://yoursite.com/2018/08/09/learn-http/learn-http/request_headers.png">
+<meta name="twitter:image" content="http://yoursite.com/2018/08/09/learn-http/learn-http/request_header.png">
   
     <link rel="alternate" href="/atom.xml" title="JJLin" type="application/atom+xml">
   
@@ -137,7 +137,7 @@ HEAD
 OPTIONS 等
 </code></pre><p>这里的路径包括「查询参数」，但不包括「锚点」<br>如果你没有写路径，那么路径默认为 /<br>第 2 部分中的 Content-Type 标注了第 4 部分的格式</p>
 <h2 id="用-Chrome-发请求"><a href="#用-Chrome-发请求" class="headerlink" title="用 Chrome 发请求"></a>用 Chrome 发请求</h2><p>打开 Network，地址栏输入网址，在 Network 点击，查看 request，<br><strong>点击「view source」</strong>可以看到请求的前三部分了。<br>如果有请求的第四部分，那么在 FormData 或 Payload 里面可以看到</p>
-<p><img src="learn-http/request_headers.png" alt="request_headers.png"></p>
+<p><img src="learn-http/request_header.png" alt="request_headers.png"></p>
 <h1 id="响应"><a href="#响应" class="headerlink" title="响应"></a>响应</h1><pre><code>请求：curl -s -v -H &quot;yyyy: xxx&quot; -- &quot;https://www.baidu.com&quot;
 
 响应：     
@@ -170,7 +170,7 @@ OPTIONS 等
 5xx 表示服务器出错
 </code></pre><p>第 2 部分中的 Content-Type 标注了第 4 部分的格式<br>第 2 部分中的 Content-Type 遵循 MIME 规范</p>
 <h2 id="用-Chrome-查看响应"><a href="#用-Chrome-查看响应" class="headerlink" title="用 Chrome 查看响应"></a>用 Chrome 查看响应</h2><p>打开 Network，输入网址，选中第一个响应，查看 Response Headers，<strong>点击「view source」</strong>，会看到响应的前两部分，查看 Response 或者 Preview，会看到响应的第 4 部分</p>
-<p><img src="learn-http/response_headers.png" alt="response_headers.png"></p>
+<p><img src="learn-http/response_header.png" alt="response_header.png"></p>
 <h2 id="如何使用-curl-命令"><a href="#如何使用-curl-命令" class="headerlink" title="如何使用 curl 命令"></a>如何使用 curl 命令</h2><blockquote>
 <p>   在Linux中curl是一个利用URL规则在命令行下工作的文件传输工具，可以说是一款很强大的http命令行工具。它支持文件的上传和下载，是综合传输工具，但按传统，习惯称url为下载工具。</p>
 </blockquote>
@@ -201,7 +201,7 @@ OPTIONS 等
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/learn-http/" data-id="cjkw6eeb90009xkiqgwnfx4eq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/learn-http/" data-id="cjkw6gszl00077oiqchgg7vwr" class="article-share-link">Share</a>
       
       
     </footer>
