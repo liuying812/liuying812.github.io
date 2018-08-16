@@ -18,7 +18,9 @@
 <meta property="og:image" content="http://yoursite.com/2018/08/16/原型与原型链/num.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/08/16/原型与原型链/o1o2.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/08/16/原型与原型链/proto.jpg">
-<meta property="og:updated_time" content="2018-08-16T11:41:38.660Z">
+<meta property="og:image" content="http://yoursite.com/2018/08/16/原型与原型链/init.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/16/原型与原型链/js.jpg">
+<meta property="og:updated_time" content="2018-08-16T12:00:09.338Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型与原型链">
 <meta name="twitter:description" content="全局对象 windowECMAScript 规定全局对象叫做 global，但是浏览器把 window 作为全局对象（浏览器先存在的） window 就是一个哈希表，有很多属性。window 的属性就是全局变量。     所有API可查看MDN，这些全局变量分为两种：   下面是第一种全局变量的理解     全局函数1、Number      12345678910111213var n1 = 1">
@@ -123,11 +125,31 @@ JS 的做法是把 toString 和 valueOf 放在一个对象里（暂且叫做公�
 然后让每一个对象的 __proto__ 存储这个「公用属性组成的对象」的地址。
 </code></pre><p><img src="/2018/08/16/原型与原型链/proto.jpg" alt="proto.jpg"></p>
 <p>对应代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">var num = new Number(1)</span><br><span class="line">num.__proto__ === Number.prototype</span><br><span class="line">//true</span><br><span class="line">num.__proto__.__proto__ === Object.prototype</span><br><span class="line">//true</span><br><span class="line"></span><br><span class="line">var str = new String('1')</span><br><span class="line">str.__proto__ === String.prototype</span><br><span class="line">//true</span><br><span class="line">str.__proto__.__proto__ === Object.prototype</span><br><span class="line">//true</span><br><span class="line"></span><br><span class="line">var boo = new Boolean(true)</span><br><span class="line">boo.__proto__ === Boolean.prototype</span><br><span class="line">//true</span><br><span class="line">boo.__proto__.__proto__ === Object.prototype</span><br><span class="line">//true</span><br><span class="line"></span><br><span class="line">var obj1 = &#123;&#125;</span><br><span class="line">obj1.__proto__ === Object.prototype</span><br><span class="line">//true</span><br><span class="line"></span><br><span class="line">Object.prototype.__proto__</span><br><span class="line">//null</span><br></pre></td></tr></table></figure></p>
-<h4 id="重要公式"><a href="#重要公式" class="headerlink" title="重要公式"></a>重要公式</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var 对象 = new 函数()</span><br><span class="line">对象.__proto__ === 对象的构造函数.prototype</span><br><span class="line"></span><br><span class="line">// 推论</span><br><span class="line">var number = new Number()</span><br><span class="line">number.__proto__ = Number.prototype</span><br><span class="line">Number.__proto__ = Function.prototype // 因为 Number 是 Function 的实例</span><br><span class="line"></span><br><span class="line">var object = new Object()</span><br><span class="line">object.__proto__ = Object.prototype</span><br><span class="line">Object.__proto__ = Function.prototype // 因为 Object 是 Function 的实例</span><br><span class="line"></span><br><span class="line">var function = new Function()</span><br><span class="line">function.__proto__ = Function.prototype</span><br><span class="line">Function.__proto__ == Function.prototye // 因为 Function 是 Function 的实例！</span><br></pre></td></tr></table></figure>
+<h4 id="重要公式"><a href="#重要公式" class="headerlink" title="重要公式"></a>重要公式</h4><pre><code class="html">var 对象 = new 函数()
+对象.__proto__ === 对象的构造函数.prototype
+
+__proto__ 和 prototype区别：前者是对象属性，后者是函数属性
+
+// 推论
+var number = new Number()
+number.__proto__ = Number.prototype
+Number.__proto__ = Function.prototype // 因为 Number 是 Function 的实例
+
+var object = new Object()
+object.__proto__ = Object.prototype
+Object.__proto__ = Function.prototype // 因为 Object 是 Function 的实例
+
+var function = new Function()
+function.__proto__ = Function.prototype
+Function.__proto__ == Function.prototye // 因为 Function 是 Function 的实例！
+</code></pre>
+<h4 id="浏览器的初始化"><a href="#浏览器的初始化" class="headerlink" title="浏览器的初始化"></a>浏览器的初始化</h4><p><img src="/2018/08/16/原型与原型链/init.jpg" alt="init.jpg">    </p>
+<p><img src="/2018/08/16/原型与原型链/js.jpg" alt="js.jpg"></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/16/原型与原型链/" data-id="cjkwhvkg3000bb8iqjglypxln" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/16/原型与原型链/" data-id="cjkwijqn0000afwiqyjz8l5py" class="article-share-link">Share</a>
       
       
     </footer>
