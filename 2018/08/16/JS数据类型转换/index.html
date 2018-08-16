@@ -16,7 +16,9 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2018/08/16/JS数据类型转换/nc1.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/08/16/JS数据类型转换/neicun2.jpg">
-<meta property="og:updated_time" content="2018-08-16T06:26:32.145Z">
+<meta property="og:image" content="http://yoursite.com/2018/08/16/JS数据类型转换/GC.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/16/JS数据类型转换/copy.jpg">
+<meta property="og:updated_time" content="2018-08-16T06:51:14.693Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS数据类型转换">
 <meta name="twitter:description" content="转化为 string 类型① 和空字符’’串相加 ， 1 + ‘’ = “1”   ， true + ‘’ = “true”② 使用 .tostring() 方法 ， (11).toString()  // “11”③ 使用 String() 方法 ， window.String(‘111’) // “111” ，String(true)//“true”     转化为 boolean 类型① 使">
@@ -96,11 +98,16 @@
 <p><img src="/2018/08/16/JS数据类型转换/nc1.jpg" alt="nc1.jpg"> </p>
 <p>常见内存分析类型如图</p>
 <p><img src="/2018/08/16/JS数据类型转换/neicun2.jpg" alt="neicun2.jpg"></p>
+<h4 id="GC垃圾回收"><a href="#GC垃圾回收" class="headerlink" title="GC垃圾回收"></a>GC垃圾回收</h4><p>垃圾： 如果一个对象没有被引用，它就是垃圾，将被回收。分析如下    </p>
+<p><img src="/2018/08/16/JS数据类型转换/GC.jpg" alt="GC.jpg"></p>
+<p>内存泄漏： 由于浏览器垃圾处理机制的原因，使得该被标记为垃圾的没被标记，就会造成内存泄漏<br>解决： 关闭所有页面前断开所有引用，例如：window.onunload = function(){document.body.onclick = null}</p>
+<h4 id="浅拷贝-VS-深拷贝"><a href="#浅拷贝-VS-深拷贝" class="headerlink" title="浅拷贝 VS 深拷贝"></a>浅拷贝 VS 深拷贝</h4><p>深拷贝：b变不影响a，基本类型赋值就是深拷贝，内存里的值重新复制一份改写，不影响别的<br>浅拷贝：b变影响a，仅仅拷贝了stack地址，内存那块并没有拷贝，改变会造成影响</p>
+<p><img src="/2018/08/16/JS数据类型转换/copy.jpg" alt="copy.jpg"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/16/JS数据类型转换/" data-id="cjkw6mk2c0004swiqtpyypsiw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/16/JS数据类型转换/" data-id="cjkw7i36u0005goiq5pbwkbda" class="article-share-link">Share</a>
       
       
     </footer>
