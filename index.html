@@ -62,6 +62,67 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-原型与原型链" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/16/原型与原型链/" class="article-date">
+  <time datetime="2018-08-16T09:31:40.000Z" itemprop="datePublished">2018-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/16/原型与原型链/">原型与原型链</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="全局对象-window"><a href="#全局对象-window" class="headerlink" title="全局对象 window"></a>全局对象 window</h4><p>ECMAScript 规定全局对象叫做 global，但是浏览器把 window 作为全局对象（浏览器先存在的）</p>
+<p>window 就是一个哈希表，有很多属性。<br>window 的属性就是全局变量。    </p>
+<p>所有API可查看MDN，这些全局变量分为两种： </p>
+<p><img src="/2018/08/16/原型与原型链/gw.jpg" alt="gw.jpg"></p>
+<p>下面是第一种全局变量的理解    </p>
+<h4 id="全局函数"><a href="#全局函数" class="headerlink" title="全局函数"></a>全局函数</h4><p><strong>1、Number</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">var n1 = 1</span><br><span class="line">var n2 = new Number(1)</span><br><span class="line"></span><br><span class="line">n1是个基本类型，本身没有属性；</span><br><span class="line">n2是个对象，里面封装了很多便于操作的方法；</span><br><span class="line"></span><br><span class="line">但我们现在完全可以进行如下操作：</span><br><span class="line">n1.toString()     //  "1"</span><br><span class="line"></span><br><span class="line">这是因为中间进行了这样的转换：有一个临时变量temp，</span><br><span class="line">temp = new Number(n1)</span><br><span class="line">temp.toString()</span><br><span class="line">所以n1就可以像使用对象一样使用其中所有方法</span><br><span class="line"></span><br><span class="line">```  </span><br><span class="line">n1 ，n2 内存图区别如下：    </span><br><span class="line"></span><br><span class="line">![num.jpg](原型与原型链/num.jpg "")    </span><br><span class="line"></span><br><span class="line">应用场景举例：   </span><br><span class="line">```html</span><br><span class="line">var n = 1</span><br><span class="line">n.xxx = 2  //该句并不会报错，而是进行上述中间转换生成一个临时temp，但在本句结束后temp立即被抹杀掉</span><br><span class="line">n.xxx      // undefined  本句相当于创建了一个新对象，当然没有上个死掉变量的属性</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">**2、String**     </span><br><span class="line">```html</span><br><span class="line">var s1 = 'strawberry'</span><br><span class="line">var s2 = new String(s1)</span><br><span class="line"></span><br><span class="line">同理,s1是基本数据类型，s2是对象</span><br></pre></td></tr></table></figure></p>
+<p>String常用的一些方法：<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String</a></p>
+<pre><code>str.charAt(0)        返回特定位置的字符
+s1.concat(s2)        连接两个字符串文本，并返回一个新的字符串
+s1.slice(0,2)        索引含前不含后
+&apos; mmm &apos;.trim()       去除字符串开始和结尾的空格
+&apos;a,b,cc&apos;.split(&apos;,&apos;)  通过指定分隔符，将字符串对象分割成字符串数组    
+</code></pre><p><strong>3、Boolean</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var f1 = false</span><br><span class="line">var f2 = new Boolean(flase)</span><br><span class="line"></span><br><span class="line">f1,f2 区别同上</span><br><span class="line"></span><br><span class="line">if(f1)&#123;console.log(1)&#125;</span><br><span class="line">if(f2)&#123;console.log(2)&#125;</span><br><span class="line">//2</span><br><span class="line">知识点：f2是对象，除了5个falsy值之外别的都是true</span><br></pre></td></tr></table></figure></p>
+<p><strong>4、Object</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var o1 = &#123;&#125;</span><br><span class="line">var o2 = new Object()</span><br><span class="line"></span><br><span class="line">o1 和 o2 没区别</span><br><span class="line">o1 === o2  //false</span><br></pre></td></tr></table></figure></p>
+<p>内存图如下：</p>
+<p><img src="/2018/08/16/原型与原型链/o1o2.jpg" alt="o1o2.jpg">    </p>
+<h4 id="公共属性-（原型）"><a href="#公共属性-（原型）" class="headerlink" title="公共属性 （原型）"></a>公共属性 （原型）</h4><pre><code>所有对象都有 toString 和 valueOf 属性，那么我们是否有必要给每个对象一个 toString 和 valueOf 呢？
+
+明显不需要。
+
+JS 的做法是把 toString 和 valueOf 放在一个对象里（暂且叫做公用属性组成的对象）
+
+然后让每一个对象的 __proto__ 存储这个「公用属性组成的对象」的地址。
+</code></pre><p><img src="/2018/08/16/原型与原型链/proto.jpg" alt="proto.jpg"></p>
+<p>对应代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">var num = new Number(1)</span><br><span class="line">num.__proto__ === Number.prototype</span><br><span class="line">//true</span><br><span class="line">num.__proto__.__proto__ === Object.prototype</span><br><span class="line">//true</span><br><span class="line"></span><br><span class="line">var str = new String('1')</span><br><span class="line">str.__proto__ === String.prototype</span><br><span class="line">//true</span><br><span class="line">str.__proto__.__proto__ === Object.prototype</span><br><span class="line">//true</span><br><span class="line"></span><br><span class="line">var boo = new Boolean(true)</span><br><span class="line">boo.__proto__ === Boolean.prototype</span><br><span class="line">//true</span><br><span class="line">boo.__proto__.__proto__ === Object.prototype</span><br><span class="line">//true</span><br><span class="line"></span><br><span class="line">var obj1 = &#123;&#125;</span><br><span class="line">obj1.__proto__ === Object.prototype</span><br><span class="line">//true</span><br><span class="line"></span><br><span class="line">Object.prototype.__proto__</span><br><span class="line">//null</span><br></pre></td></tr></table></figure></p>
+<h4 id="重要公式"><a href="#重要公式" class="headerlink" title="重要公式"></a>重要公式</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var 对象 = new 函数()</span><br><span class="line">对象.__proto__ === 对象的构造函数.prototype</span><br><span class="line"></span><br><span class="line">// 推论</span><br><span class="line">var number = new Number()</span><br><span class="line">number.__proto__ = Number.prototype</span><br><span class="line">Number.__proto__ = Function.prototype // 因为 Number 是 Function 的实例</span><br><span class="line"></span><br><span class="line">var object = new Object()</span><br><span class="line">object.__proto__ = Object.prototype</span><br><span class="line">Object.__proto__ = Function.prototype // 因为 Object 是 Function 的实例</span><br><span class="line"></span><br><span class="line">var function = new Function()</span><br><span class="line">function.__proto__ = Function.prototype</span><br><span class="line">Function.__proto__ == Function.prototye // 因为 Function 是 Function 的实例！</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/16/原型与原型链/" data-id="cjkwh6yjs0009nsiq3ekluz6i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-JS数据类型转换" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/16/JS数据类型转换/" class="article-date">
@@ -100,7 +161,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/16/JS数据类型转换/" data-id="cjkw7i36u0005goiq5pbwkbda" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/16/JS数据类型转换/" data-id="cjkwh6yji0004nsiqzae29iux" class="article-share-link">Share</a>
       
       
     </footer>
@@ -151,7 +212,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/15/JS数据类型/" data-id="cjkw7i36s0004goiqpcjbqo0v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/15/JS数据类型/" data-id="cjkwh6yjy000bnsiqll6wrzc0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -196,7 +257,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/14/CSSLayout/" data-id="cjkw7i36j0001goiqxdn2u3uh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/14/CSSLayout/" data-id="cjkwh6yj00000nsiqjk2n5cmh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -241,7 +302,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/13/CSS常用知识点总结/" data-id="cjkw7i36m0002goiq5xx5ecaz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/13/CSS常用知识点总结/" data-id="cjkwh6yjd0002nsiq1a384h66" class="article-share-link">Share</a>
       
       
     </footer>
@@ -292,7 +353,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/10/HtmlTags/" data-id="cjkw7i36q0003goiqnp43ygcs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/10/HtmlTags/" data-id="cjkwh6yjg0003nsiqgs8yt2wa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -436,7 +497,7 @@ OPTIONS 等
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/learn-http/" data-id="cjkw7i3710009goiqyq335xlh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/learn-http/" data-id="cjkwh6yjq0008nsiqciqgsena" class="article-share-link">Share</a>
       
       
     </footer>
@@ -482,7 +543,7 @@ OPTIONS 等
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/learn-git/" data-id="cjkw7i3700008goiqazcnj8h9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/learn-git/" data-id="cjkwh6yjp0007nsiqu70sp8ln" class="article-share-link">Share</a>
       
       
     </footer>
@@ -523,7 +584,7 @@ OPTIONS 等
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/explainshell/" data-id="cjkw7i36w0006goiqe4elcjm0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/explainshell/" data-id="cjkwh6yjk0005nsiqt9ydxv0z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -565,44 +626,7 @@ OPTIONS 等
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/常用命令详解/" data-id="cjkw7i373000agoiqg8uad9yq" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-8月8日" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/08/8月8日/" class="article-date">
-  <time datetime="2018-08-08T15:59:34.000Z" itemprop="datePublished">2018-08-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/08/8月8日/">8月8日</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>现在8月9日零点一分了~~</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/08/8月8日/" data-id="cjkw7i36b0000goiq89f6um9a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/常用命令详解/" data-id="cjkwh6yjt000ansiq1fslilam" class="article-share-link">Share</a>
       
       
     </footer>
@@ -648,6 +672,10 @@ OPTIONS 等
       <ul>
         
           <li>
+            <a href="/2018/08/16/原型与原型链/">原型与原型链</a>
+          </li>
+        
+          <li>
             <a href="/2018/08/16/JS数据类型转换/">JS数据类型转换</a>
           </li>
         
@@ -661,10 +689,6 @@ OPTIONS 等
         
           <li>
             <a href="/2018/08/13/CSS常用知识点总结/">CSS常用知识点总结</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/10/HtmlTags/">HtmlTags</a>
           </li>
         
       </ul>
