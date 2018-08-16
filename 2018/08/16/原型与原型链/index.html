@@ -18,7 +18,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/08/16/原型与原型链/num.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/08/16/原型与原型链/o1o2.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/08/16/原型与原型链/proto.jpg">
-<meta property="og:updated_time" content="2018-08-16T11:31:24.026Z">
+<meta property="og:updated_time" content="2018-08-16T11:41:38.660Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型与原型链">
 <meta name="twitter:description" content="全局对象 windowECMAScript 规定全局对象叫做 global，但是浏览器把 window 作为全局对象（浏览器先存在的） window 就是一个哈希表，有很多属性。window 的属性就是全局变量。     所有API可查看MDN，这些全局变量分为两种：   下面是第一种全局变量的理解     全局函数1、Number      12345678910111213var n1 = 1">
@@ -100,8 +100,10 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var n1 = 1</span><br><span class="line">var n2 = new Number(1)</span><br><span class="line"></span><br><span class="line">n1是个基本类型，本身没有属性；</span><br><span class="line">n2是个对象，里面封装了很多便于操作的方法；</span><br><span class="line"></span><br><span class="line">但我们现在完全可以进行如下操作：</span><br><span class="line">n1.toString()     //  "1"</span><br><span class="line"></span><br><span class="line">这是因为中间进行了这样的转换：有一个临时变量temp，</span><br><span class="line">temp = new Number(n1)</span><br><span class="line">temp.toString()</span><br><span class="line">所以n1就可以像使用对象一样使用其中所有方法</span><br></pre></td></tr></table></figure>
 <p>n1 ，n2 内存图区别如下：    </p>
 <p><img src="/2018/08/16/原型与原型链/num.jpg" alt="num.jpg">    </p>
-<p>应用场景举例： </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var n = 1</span><br><span class="line">n.xxx = 2  //该句并不会报错，而是进行上述中间转换生成一个临时temp，但在本句结束后temp立即被抹杀掉</span><br><span class="line">n.xxx      // undefined  本句相当于创建了一个新对象，当然没有上个死掉变量的属性    </span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">**2、String**  </span><br><span class="line">   </span><br><span class="line">```html</span><br><span class="line">var s1 = 'strawberry'</span><br><span class="line">var s2 = new String(s1)</span><br><span class="line"></span><br><span class="line">同理,s1是基本数据类型，s2是对象</span><br></pre></td></tr></table></figure>
+<p>应用场景举例：  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var n = 1</span><br><span class="line">n.xxx = 2  //该句并不会报错，而是进行上述中间转换生成一个临时temp，但在本句结束后temp立即被抹杀掉</span><br><span class="line">n.xxx      // undefined  本句相当于创建了一个新对象，当然没有上个死掉变量的属性</span><br></pre></td></tr></table></figure>
+<p><strong>2、String</strong>  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var s1 = 'strawberry'</span><br><span class="line">var s2 = new String(s1)</span><br><span class="line"></span><br><span class="line">同理,s1是基本数据类型，s2是对象</span><br></pre></td></tr></table></figure>
 <p>String常用的一些方法：<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String</a></p>
 <pre><code>str.charAt(0)        返回特定位置的字符
 s1.concat(s2)        连接两个字符串文本，并返回一个新的字符串
@@ -125,7 +127,7 @@ JS 的做法是把 toString 和 valueOf 放在一个对象里（暂且叫做公�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/16/原型与原型链/" data-id="cjkwhicet000by8iq0by0ehea" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/16/原型与原型链/" data-id="cjkwhvkg3000bb8iqjglypxln" class="article-share-link">Share</a>
       
       
     </footer>
