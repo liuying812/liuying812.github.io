@@ -62,6 +62,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-模拟jQuery" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/19/模拟jQuery/" class="article-date">
+  <time datetime="2018-08-19T06:28:05.000Z" itemprop="datePublished">2018-08-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/19/模拟jQuery/">模拟jQuery</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="window-jQuery"><a href="#window-jQuery" class="headerlink" title="window jQuery"></a>window jQuery</h4><p>window.jQuery = ???<br>window.$ = jQuery</p>
+<p>var $div = $(‘div’)<br>$div.addClass(‘red’) // 可将所有 div 的 class 添加一个 red<br>$div.setText(‘hi’) // 可将所有 div 的 textContent 变为 hi</p>
+<p>完整代码如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>window.jQuery<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">	.red&#123;</span></span><br><span class="line"><span class="undefined">	  color: red;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>你好吗<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  		window.jQuery = function(nodeOrSelector) &#123;</span></span><br><span class="line"><span class="undefined">  		 </span></span><br><span class="line"><span class="undefined">  		let nodes = &#123;&#125;</span></span><br><span class="line"><span class="undefined">  		if(typeof nodeOrSelector === 'string')&#123;</span></span><br><span class="line"><span class="undefined">  		    let temp = document.querySelectorAll(nodeOrSelector) //伪数组</span></span><br><span class="line"><span class="undefined">  		    for(let i=0; i&lt;temp.length; i++)&#123;</span></span><br><span class="line"><span class="undefined">  		      nodes[i] = temp[i]</span></span><br><span class="line"><span class="undefined">  		    &#125;</span></span><br><span class="line"><span class="undefined">  		    nodes.length = temp.length</span></span><br><span class="line"><span class="undefined">  		&#125;else if(nodeOrSelector instanceof Node)&#123;</span></span><br><span class="line"><span class="undefined">  		    nodes  = &#123;</span></span><br><span class="line"><span class="undefined">  		          0: nodeOrSelector,</span></span><br><span class="line"><span class="undefined">  		          length: 1</span></span><br><span class="line"><span class="undefined">  		    &#125;</span></span><br><span class="line"><span class="undefined">  		&#125;</span></span><br><span class="line"><span class="undefined">  		  </span></span><br><span class="line"><span class="undefined">  		nodes.addClass = function(classes)&#123;</span></span><br><span class="line"><span class="undefined">  		    classes.forEach((value) =&gt; &#123;</span></span><br><span class="line"><span class="undefined">  		     	for(let i=0; i&lt;nodes.length; i++)&#123;</span></span><br><span class="line"><span class="undefined">  		     		nodes[i].classList.add(value)</span></span><br><span class="line"><span class="undefined">  		     	&#125;</span></span><br><span class="line"><span class="undefined">  		    &#125;)    </span></span><br><span class="line"><span class="undefined">  		&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">  		nodes.settext = function(text)&#123;</span></span><br><span class="line"><span class="undefined">  			for (var i = 0; i &lt; nodes.length; i++) &#123;</span></span><br><span class="line"><span class="undefined">  				nodes[i].textContent = text</span></span><br><span class="line"><span class="undefined">  			&#125;</span></span><br><span class="line"><span class="undefined">  		&#125;</span></span><br><span class="line"><span class="undefined">  		  return nodes</span></span><br><span class="line"><span class="undefined">  		&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">  		var $div = jQuery('div')</span></span><br><span class="line"><span class="undefined">  		$div.addClass(['red'])</span></span><br><span class="line"><span class="undefined">  		$div.settext('hi')</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h4><p>通过自己封装一个 window.jQuery 这样的练习，可以更清晰地对 jQuery 的本质有初步的认知。</p>
+<p>1、从封装一个函数入手，对于一段可以反复调用的代码块，通常将其包装成一个函数方便反复调用，本例中封装了两个具有特殊意义的函数  </p>
+<pre><code>addClass()     //将所有 div 的 class 添加一个 red         
+settext()   //将所有 div 的 textContent 变为 hi
+</code></pre><p>2、这些特殊函数被装入一个新的接口对外提供使用，也就是本例中window.jQuery 这个函数    </p>
+<p>3、window.jQuery 首先判断输入是一个节点还是选择器，组装成相应的对象作为全局变量，为后面所有操作提供对象，所以 nodes 和下文各个函数组合都称为闭包。方法调用时相当于隐形的调用call方法将当前对象作为第一个参数传入。</p>
+<p>4、addClass()实现：遍历输入的class数组，给相应的元素赋值；<br>   settext()实现：找到相应节点给元素赋值；<br>   可以在里面添加任何想要实现的方法供外部使用，<br>   如完善text() 方法同时具备取值和赋值功能，<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">nodes.text = function(text)&#123;</span><br><span class="line">  	if(text === undefined)&#123;</span><br><span class="line">  		var texts = []</span><br><span class="line">  		for (var i = 0; i <span class="tag">&lt; <span class="attr">nodes.length</span>; <span class="attr">i</span>++) &#123;</span></span><br><span class="line"><span class="tag">  			<span class="attr">texts.push</span>(<span class="attr">nodes</span>[<span class="attr">i</span>]<span class="attr">.textContent</span>)</span></span><br><span class="line"><span class="tag">  		&#125;</span></span><br><span class="line"><span class="tag">  			<span class="attr">return</span> <span class="attr">texts</span></span></span><br><span class="line"><span class="tag">  		&#125;<span class="attr">else</span>&#123;</span></span><br><span class="line">  			for (var i = 0; i &lt; nodes.length; i++) &#123;</span><br><span class="line">  				nodes[i].textContent = text</span><br><span class="line">  			&#125;</span><br><span class="line">  		&#125;</span><br><span class="line">  	&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/19/模拟jQuery/" data-id="cjl0l6j830009eciq3k484w2p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-原型与原型链" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/16/原型与原型链/" class="article-date">
@@ -140,7 +187,7 @@ Function.__proto__ == Function.prototye // 因为 Function 是 Function 的实�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/16/原型与原型链/" data-id="cjkwijqn0000afwiqyjz8l5py" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/16/原型与原型链/" data-id="cjl0l6j9a000ceciqamjbk271" class="article-share-link">Share</a>
       
       
     </footer>
@@ -188,7 +235,7 @@ Function.__proto__ == Function.prototye // 因为 Function 是 Function 的实�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/16/JS数据类型转换/" data-id="cjkwijqml0004fwiqlcs0y99w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/16/JS数据类型转换/" data-id="cjl0l6j7p0007eciqi98dy7bo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -239,7 +286,7 @@ Function.__proto__ == Function.prototye // 因为 Function 是 Function 的实�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/15/JS数据类型/" data-id="cjkwijqmn0005fwiqriqhf1w1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/15/JS数据类型/" data-id="cjl0l6j7b0002eciqn1a0aamc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -284,7 +331,7 @@ Function.__proto__ == Function.prototye // 因为 Function 是 Function 的实�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/14/CSSLayout/" data-id="cjkwijqm90001fwiqyrxh8r0a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/14/CSSLayout/" data-id="cjl0l6j7d0003eciqfnoftclo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -329,7 +376,7 @@ Function.__proto__ == Function.prototye // 因为 Function 是 Function 的实�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/13/CSS常用知识点总结/" data-id="cjkwijqmc0002fwiqfjeqlwnh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/13/CSS常用知识点总结/" data-id="cjl0l6j790001eciqh0ykh3ek" class="article-share-link">Share</a>
       
       
     </footer>
@@ -380,7 +427,7 @@ Function.__proto__ == Function.prototye // 因为 Function 是 Function 的实�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/10/HtmlTags/" data-id="cjkwijqmh0003fwiqmof5alnd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/10/HtmlTags/" data-id="cjl0l6j7n0006eciqpoz0lsz6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -524,7 +571,7 @@ OPTIONS 等
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/learn-http/" data-id="cjkwijqmy0009fwiquwu92ya3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/learn-http/" data-id="cjl0l6j85000aeciq8bvxgcs8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -570,7 +617,7 @@ OPTIONS 等
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/learn-git/" data-id="cjkwijqmw0008fwiq0mfmcgq3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/learn-git/" data-id="cjl0l6j7j0004eciqk1wa7h91" class="article-share-link">Share</a>
       
       
     </footer>
@@ -611,49 +658,7 @@ OPTIONS 等
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/explainshell/" data-id="cjkwijqmr0006fwiq5zix4zuz" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-常用命令详解" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/09/常用命令详解/" class="article-date">
-  <time datetime="2018-08-08T16:28:19.000Z" itemprop="datePublished">2018-08-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/09/常用命令详解/">常用命令详解</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><p>解释：list directory contents （罗列出ls后目录下所有内容），例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br><span class="line">_config.yml  node_modules/  package-lock.json  scaffolds/  themes/</span><br><span class="line">db.json      package.json   public/            <span class="built_in">source</span>/</span><br></pre></td></tr></table></figure></p>
-<h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h3><p>解释：concatenate files and print on the standard output（查看某个文件并在标准输出中打印），例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ cat package.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"hexo-site"</span>,</span><br><span class="line">  <span class="string">"version"</span>: <span class="string">"0.0.0"</span>,</span><br><span class="line">  <span class="string">"private"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">"hexo"</span>: &#123;</span><br><span class="line">    <span class="string">"version"</span>: <span class="string">"3.7.1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="string">"hexo"</span>: <span class="string">"^3.2.0"</span>,</span><br><span class="line">    <span class="string">"hexo-deployer-git"</span>: <span class="string">"^0.3.1"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-archive"</span>: <span class="string">"^0.1.4"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-category"</span>: <span class="string">"^0.1.3"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-index"</span>: <span class="string">"^0.2.0"</span>,</span><br><span class="line">    <span class="string">"hexo-generator-tag"</span>: <span class="string">"^0.2.0"</span>,</span><br><span class="line">    <span class="string">"hexo-renderer-ejs"</span>: <span class="string">"^0.3.0"</span>,</span><br><span class="line">    <span class="string">"hexo-renderer-marked"</span>: <span class="string">"^0.3.0"</span>,</span><br><span class="line">    <span class="string">"hexo-renderer-stylus"</span>: <span class="string">"^0.3.1"</span>,</span><br><span class="line">    <span class="string">"hexo-server"</span>: <span class="string">"^0.2.0"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h3><p>解释：move (rename) files, （移动或重命名文件），例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mv a.txt b.txt</span><br></pre></td></tr></table></figure></p>
-<h3 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h3><p>解释：change file timestamps, （新建一个文件或更新一个文件的时间戳）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch aaa.txt</span><br></pre></td></tr></table></figure></p>
-<h3 id="如何使用-explainshell-com-网站"><a href="#如何使用-explainshell-com-网站" class="headerlink" title="如何使用 explainshell.com 网站"></a>如何使用 <a href="https://www.explainshell.com" target="_blank" rel="noopener">explainshell.com</a> 网站</h3><p>这是一个Linux命令解释工具，打开网站输入你想要查看的命令点击enter键就可以得到该命令的解释了，鼠标放到相应的命令会有对应的解释，例如：</p>
-<p><img src="/2018/08/09/常用命令详解/ls-ex.jpg" alt="ls-ex.jpg"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/常用命令详解/" data-id="cjkwijqn7000bfwiq3sbhj14q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/explainshell/" data-id="cjl0l6j7l0005eciq3d6qy9qe" class="article-share-link">Share</a>
       
       
     </footer>
@@ -699,6 +704,10 @@ OPTIONS 等
       <ul>
         
           <li>
+            <a href="/2018/08/19/模拟jQuery/">模拟jQuery</a>
+          </li>
+        
+          <li>
             <a href="/2018/08/16/原型与原型链/">原型与原型链</a>
           </li>
         
@@ -712,10 +721,6 @@ OPTIONS 等
         
           <li>
             <a href="/2018/08/14/CSSLayout/">CSSLayout</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/13/CSS常用知识点总结/">CSS常用知识点总结</a>
           </li>
         
       </ul>
