@@ -86,8 +86,7 @@
       
         <h4 id="window-jQuery"><a href="#window-jQuery" class="headerlink" title="window.jQuery"></a>window.jQuery</h4><p>window.jQuery = ???<br>window.$ = jQuery</p>
 <p>var $div = $(‘div’)<br>$div.addClass(‘red’) // 可将所有 div 的 class 添加一个 red<br>$div.setText(‘hi’) // 可将所有 div 的 textContent 变为 hi</p>
-<p>完整代码如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>window.jQuery<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">	.red&#123;</span></span><br><span class="line"><span class="undefined">	  color: red;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>你好吗<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  		window.jQuery = function(nodeOrSelector) &#123;</span></span><br><span class="line"><span class="undefined">  		 </span></span><br><span class="line"><span class="undefined">  		let nodes = &#123;&#125;</span></span><br><span class="line"><span class="undefined">  		if(typeof nodeOrSelector === 'string')&#123;</span></span><br><span class="line"><span class="undefined">  		    let temp = document.querySelectorAll(nodeOrSelector) //伪数组</span></span><br><span class="line"><span class="undefined">  		    for(let i=0; i&lt;temp.length; i++)&#123;</span></span><br><span class="line"><span class="undefined">  		      nodes[i] = temp[i]</span></span><br><span class="line"><span class="undefined">  		    &#125;</span></span><br><span class="line"><span class="undefined">  		    nodes.length = temp.length</span></span><br><span class="line"><span class="undefined">  		&#125;else if(nodeOrSelector instanceof Node)&#123;</span></span><br><span class="line"><span class="undefined">  		    nodes  = &#123;</span></span><br><span class="line"><span class="undefined">  		          0: nodeOrSelector,</span></span><br><span class="line"><span class="undefined">  		          length: 1</span></span><br><span class="line"><span class="undefined">  		    &#125;</span></span><br><span class="line"><span class="undefined">  		&#125;</span></span><br><span class="line"><span class="undefined">  		  </span></span><br><span class="line"><span class="undefined">  		nodes.addClass = function(classes)&#123;</span></span><br><span class="line"><span class="undefined">  		    classes.forEach((value) =&gt; &#123;</span></span><br><span class="line"><span class="undefined">  		     	for(let i=0; i&lt;nodes.length; i++)&#123;</span></span><br><span class="line"><span class="undefined">  		     		nodes[i].classList.add(value)</span></span><br><span class="line"><span class="undefined">  		     	&#125;</span></span><br><span class="line"><span class="undefined">  		    &#125;)    </span></span><br><span class="line"><span class="undefined">  		&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">  		nodes.settext = function(text)&#123;</span></span><br><span class="line"><span class="undefined">  			for (var i = 0; i &lt; nodes.length; i++) &#123;</span></span><br><span class="line"><span class="undefined">  				nodes[i].textContent = text</span></span><br><span class="line"><span class="undefined">  			&#125;</span></span><br><span class="line"><span class="undefined">  		&#125;</span></span><br><span class="line"><span class="undefined">  		  return nodes</span></span><br><span class="line"><span class="undefined">  		&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">  		var $div = jQuery('div')</span></span><br><span class="line"><span class="undefined">  		$div.addClass(['red'])</span></span><br><span class="line"><span class="undefined">  		$div.settext('hi')</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>window.jQuery<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">	.red&#123;color: red;&#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>你好吗<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  		window.jQuery = function(nodeOrSelector) &#123;</span></span><br><span class="line"><span class="undefined">  		 </span></span><br><span class="line"><span class="undefined">  		let nodes = &#123;&#125;</span></span><br><span class="line"><span class="undefined">  		if(typeof nodeOrSelector === 'string')&#123;</span></span><br><span class="line"><span class="undefined">  		    let temp = document.querySelectorAll(nodeOrSelector) //伪数组</span></span><br><span class="line"><span class="undefined">  		    for(let i=0; i&lt;temp.length; i++)&#123;</span></span><br><span class="line"><span class="undefined">  		      nodes[i] = temp[i]</span></span><br><span class="line"><span class="undefined">  		    &#125;</span></span><br><span class="line"><span class="undefined">  		    nodes.length = temp.length</span></span><br><span class="line"><span class="undefined">  		&#125;else if(nodeOrSelector instanceof Node)&#123;</span></span><br><span class="line"><span class="undefined">  		    nodes  = &#123;</span></span><br><span class="line"><span class="undefined">  		          0: nodeOrSelector,</span></span><br><span class="line"><span class="undefined">  		          length: 1</span></span><br><span class="line"><span class="undefined">  		    &#125;</span></span><br><span class="line"><span class="undefined">  		&#125;</span></span><br><span class="line"><span class="undefined">  		  </span></span><br><span class="line"><span class="undefined">  		nodes.addClass = function(classes)&#123;</span></span><br><span class="line"><span class="undefined">  		    classes.forEach((value) =&gt; &#123;</span></span><br><span class="line"><span class="undefined">  		     	for(let i=0; i&lt;nodes.length; i++)&#123;</span></span><br><span class="line"><span class="undefined">  		     		nodes[i].classList.add(value)</span></span><br><span class="line"><span class="undefined">  		     	&#125;</span></span><br><span class="line"><span class="undefined">  		    &#125;)    </span></span><br><span class="line"><span class="undefined">  		&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">  		nodes.settext = function(text)&#123;</span></span><br><span class="line"><span class="undefined">  			for (var i = 0; i &lt; nodes.length; i++) &#123;</span></span><br><span class="line"><span class="undefined">  				nodes[i].textContent = text</span></span><br><span class="line"><span class="undefined">  			&#125;</span></span><br><span class="line"><span class="undefined">  		&#125;</span></span><br><span class="line"><span class="undefined">  		  return nodes</span></span><br><span class="line"><span class="undefined">  		&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">  		var $div = jQuery('div')</span></span><br><span class="line"><span class="undefined">  		$div.addClass(['red'])</span></span><br><span class="line"><span class="undefined">  		$div.settext('hi')</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h4 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h4><p>通过自己封装一个 window.jQuery 这样的练习，可以更清晰地对 jQuery 的本质有初步的认知。</p>
 <p>1、从封装一个函数入手，对于一段可以反复调用的代码块，通常将其包装成一个函数方便反复调用，本例中封装了两个具有特殊意义的函数  </p>
 <pre><code>addClass()     //将所有 div 的 class 添加一个 red         
@@ -99,7 +98,7 @@ settext()   //将所有 div 的 textContent 变为 hi
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/19/模拟jQuery/" data-id="cjl0l9nnt000c6siq71zha3md" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/19/模拟jQuery/" data-id="cjl0lb54b000bekiqu9pmimak" class="article-share-link">Share</a>
       
       
     </footer>
@@ -187,7 +186,7 @@ Function.__proto__ == Function.prototye // 因为 Function 是 Function 的实�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/16/原型与原型链/" data-id="cjl0l9nnq000a6siqtvg1qvo1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/16/原型与原型链/" data-id="cjl0lb5490009ekiqygxfr6r9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -235,7 +234,7 @@ Function.__proto__ == Function.prototye // 因为 Function 是 Function 的实�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/16/JS数据类型转换/" data-id="cjl0l9nn400046siqssdaz2mg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/16/JS数据类型转换/" data-id="cjl0lb53q0004ekiqng2lvkee" class="article-share-link">Share</a>
       
       
     </footer>
@@ -286,7 +285,7 @@ Function.__proto__ == Function.prototye // 因为 Function 是 Function 的实�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/15/JS数据类型/" data-id="cjl0l9nne00056siq3sufg1et" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/15/JS数据类型/" data-id="cjl0lb53m0003ekiq3rogv5qa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -331,7 +330,7 @@ Function.__proto__ == Function.prototye // 因为 Function 是 Function 的实�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/14/CSSLayout/" data-id="cjl0l9nmv00026siqrb4jev1c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/14/CSSLayout/" data-id="cjl0lb5390000ekiq3xgg89lg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -376,7 +375,7 @@ Function.__proto__ == Function.prototye // 因为 Function 是 Function 的实�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/13/CSS常用知识点总结/" data-id="cjl0l9nmr00016siqt8hhner5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/13/CSS常用知识点总结/" data-id="cjl0lb53f0001ekiqvyc56cet" class="article-share-link">Share</a>
       
       
     </footer>
@@ -427,7 +426,7 @@ Function.__proto__ == Function.prototye // 因为 Function 是 Function 的实�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/10/HtmlTags/" data-id="cjl0l9nmz00036siqukw7y7ce" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/10/HtmlTags/" data-id="cjl0lb53i0002ekiqkpiz6337" class="article-share-link">Share</a>
       
       
     </footer>
@@ -571,7 +570,7 @@ OPTIONS 等
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/learn-http/" data-id="cjl0l9nno00096siqait8th5d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/learn-http/" data-id="cjl0lb5460008ekiqw3b48xbp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -617,7 +616,7 @@ OPTIONS 等
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/learn-git/" data-id="cjl0l9nnj00076siq1m140400" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/learn-git/" data-id="cjl0lb53z0007ekiq7xi70nkz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -658,7 +657,7 @@ OPTIONS 等
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/09/explainshell/" data-id="cjl0l9nng00066siqvgdsy0wa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/09/explainshell/" data-id="cjl0lb53t0005ekiqyfw1bkqf" class="article-share-link">Share</a>
       
       
     </footer>
